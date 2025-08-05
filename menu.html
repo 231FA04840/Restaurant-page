@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Amrutham</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for the Menu page */
+        .menu-section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-category {
+            margin-bottom: 2.5rem;
+        }
+
+        .menu-category h2 {
+            font-size: 2.5rem;
+            color: #ff5722;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #ff5722;
+            padding-bottom: 0.5rem;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px dashed #444;
+        }
+
+        .menu-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f47b19;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-description {
+            font-size: 1rem;
+            color: #aaa;
+        }
+
+        .item-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ede625;
+            margin-left: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-price {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="menu-background">
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="logo">Amrutham</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="reservation.html">RESERVATION</a></li>
+                <li><a href="location.html">LOCATION</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content for Menu Page -->
+    <main class="page-container">
+        <section class="menu-section">
+            <h1 class="page-title">Our Menu</h1>
+
+            <!-- Breakfast Category -->
+            <div class="menu-category">
+                <h2>Breakfast</h2>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Idli Sambar</div>
+                        <div class="item-description">Steamed rice cakes served with a lentil-based vegetable stew.</div>
+                    </div>
+                    <div class="item-price">₹40.00</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Masala Dosa</div>
+                        <div class="item-description">Crispy crepe made from fermented batter, stuffed with spiced potato mash.</div>
+                    </div>
+                    <div class="item-price">₹45.00</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Vada</div>
+                        <div class="item-description">Savory fried fritters made from lentil batter, served with chutney.</div>
+                    </div>
+                    <div class="item-price">₹30.00</div>
+                </div>
+            </div>
+
+            <!-- Main Course Category -->
+            <div class="menu-category">
+                <h2>Main Course</h2>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Andhra Chicken Curry</div>
+                        <div class="item-description">Spicy chicken curry with a blend of traditional Andhra spices.</div>
+                    </div>
+                    <div class="item-price">115.00</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Paneer Butter Masala</div>
+                        <div class="item-description">Cubes of cottage cheese in a rich, creamy tomato and cashew-based gravy.</div>
+                    </div>
+                    <div class="item-price">₹95.00</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Gutti Vankaya Kura</div>
+                        <div class="item-description">Stuffed eggplant curry, a traditional Andhra delicacy.</div>
+                    </div>
+                    <div class="item-price">₹75.00</div>
+                </div>
+            </div>
+
+            <!-- Biryani Category -->
+            <div class="menu-category">
+                <h2>Biryanis</h2>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Chicken Dum Biryani</div>
+                        <div class="item-description">Fragrant basmati rice cooked with marinated chicken and aromatic spices.</div>
+                    </div>
+                    <div class="item-price">₹255.00</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Vegetable Biryani</div>
+                        <div class="item-description">Aromatic rice cooked with a mix of fresh vegetables and spices.</div>
+                    </div>
+                    <div class="item-price">₹175.00</div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="social-icons">
+            <a href="#"><img src="https://freepnglogo.com/images/all_img/1730342312_facebook-logo-2024.png" alt="Facebook"></a>
+            <a href="#"><img src="https://i.pinimg.com/736x/19/42/d5/1942d5deb0f788e6228054cd92767ff6.jpg" alt="Instagram"></a>
+            <a href="#"><img src="https://i.pinimg.com/736x/39/8c/25/398c25a4436e5b8ca72f141084cdc66e.jpg" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

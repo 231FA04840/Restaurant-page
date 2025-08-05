@@ -1,0 +1,68 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Function to update the menu based on the current time
+    function updateMenu() {
+        const now = new Date();
+        const hour = now.getHours();
+
+        // Get all menu categories
+        const breakfastMenu = document.getElementById('breakfast-menu');
+        const lunchMenu = document.getElementById('lunch-menu');
+        const dinnerMenu = document.getElementById('dinner-menu');
+        const menuMessage = document.getElementById('menu-message');
+
+        // Hide all menus initially
+        if (breakfastMenu) breakfastMenu.style.display = 'none';
+        if (lunchMenu) lunchMenu.style.display = 'none';
+        if (dinnerMenu) dinnerMenu.style.display = 'none';
+        if (menuMessage) menuMessage.textContent = "";
+
+        // Determine which menu to show based on the time
+        if (hour >= 6 && hour < 11) {
+            // 6 AM to 11 AM is breakfast time
+            if (breakfastMenu) breakfastMenu.style.display = 'block';
+            if (menuMessage) menuMessage.textContent = "Currently serving our delightful Breakfast Menu!";
+        } else if (hour >= 11 && hour < 17) {
+            // 11 AM to 5 PM is lunch time
+            if (lunchMenu) lunchMenu.style.display = 'block';
+            if (menuMessage) menuMessage.textContent = "It's lunchtime! Explore our delicious Main Course options.";
+        } else {
+            // 5 PM onwards and before 6 AM is dinner time
+            if (dinnerMenu) dinnerMenu.style.display = 'block';
+            if (menuMessage) menuMessage.textContent = "Enjoy your evening with our savory Dinner Menu.";
+        }
+    }
+
+    // Function to handle the reservation form submission
+    function handleReservationForm(e) {
+        // Prevent the form from submitting normally
+        e.preventDefault();
+
+        // Get form elements
+        const form = document.getElementById('reservation-form');
+        const name = form.elements['name'].value;
+        const date = form.elements['date'].value;
+        const time = form.elements['time'].value;
+        const guests = form.elements['guests'].value;
+        const confirmationMessage = document.getElementById('confirmation-message');
+
+        // Create and display a confirmation message
+        confirmationMessage.innerHTML = `
+            <p><strong>Thank you, ${name}!</strong></p>
+            <p>Your reservation for <strong>${guests} guests</strong> on <strong>${date}</strong> at <strong>${time}</strong> has been successfully confirmed.</p>
+            <p>We look forward to seeing you!</p>
+        `;
+
+        // Hide the form and show the message
+        form.style.display = 'none';
+        confirmationMessage.style.display = 'block';
+    }
+
+    // Run the menu update function when the page loads
+    updateMenu();
+
+    // Attach the submit event listener to the reservation form
+    const reservationForm = document.getElementById('reservation-form');
+    if (reservationForm) {
+        reservationForm.addEventListener('submit', handleReservationForm);
+    }
+});
